@@ -4,9 +4,9 @@ import ar.com.augustoocc.model.Match;
 
 public interface MatchService {
 
-    public void newLike(Match course);
-    public void newDislike(Match course);
-    public Match findMatch(String name);
+    public Mono newLike(int id);
+    public void newDislike(int id);
+    public Match findMatch(int id);
 
 
 }
