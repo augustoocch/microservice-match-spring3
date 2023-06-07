@@ -2,6 +2,7 @@ package ar.com.augustoocc.controller;
 
 
 import ar.com.augustoocc.model.Course;
+import ar.com.augustoocc.model.Match;
 import ar.com.augustoocc.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,10 +16,9 @@ public class MatchController {
     CourseService courseService;
 
     @GetMapping(value = "/find-course/{course}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ResponseEntity<Course> findCourse(@PathVariable(name = "course", required = true) String courseName) {
+    public ResponseEntity<Match> findCourse(@PathVariable(name = "course", required = true) String courseName) {
         if (courseService.findCourse(courseName) != null) {
-            Course curso = new Course();
+            Match curso = new Match();
             curso = courseService.findCourse(courseName);
             return new ResponseEntity("Course: " + curso.getNombre() + " found", HttpStatus.ACCEPTED);
         } else {
@@ -27,8 +27,7 @@ public class MatchController {
     }
 
     @PutMapping(value = "/new-course")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ResponseEntity<Course> newCourse(@RequestBody Course course) {
+    public ResponseEntity<Match> newCourse(@RequestBody Match course) {
         if (courseService.findCourse(course.getNombre()) != null) {
             return new ResponseEntity("Course already exist!!", HttpStatus.BAD_REQUEST);
         } else {
@@ -38,8 +37,7 @@ public class MatchController {
     }
 
     @PatchMapping(value = "/update-course")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ResponseEntity<Course> updateUser(@RequestBody Course course) {
+    public ResponseEntity<Match> updateUser(@RequestBody Match course) {
         if (courseService.findCourse(course.getNombre()) != null) {
             Course newCourse = courseService.findCourse(course.getNombre());
             courseService.updateCourse(course);
@@ -54,10 +52,9 @@ public class MatchController {
     }
 
     @DeleteMapping(value = "/delete-course")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ResponseEntity<Course> deleteUser(@RequestBody Course course) {
+    public ResponseEntity<Match> deleteUser(@RequestBody Match course) {
         if (courseService.findCourse(course.getNombre()) != null) {
-            Course newCourse = courseService.findCourse(course.getNombre());
+            Match newCourse = courseService.findCourse(course.getNombre());
             courseService.deleteCourse(course);
             return new ResponseEntity("Course: " + course.getNombre() + " properly deleted", HttpStatus.ACCEPTED);
         }
