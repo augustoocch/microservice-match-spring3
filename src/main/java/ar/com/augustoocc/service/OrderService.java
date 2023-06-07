@@ -1,8 +1,6 @@
 package ar.com.augustoocc.service;
 
 
-import ar.com.augustoocc.model.Order;
-
 public interface OrderService {
 
     public void deleteOrder(Order orders);

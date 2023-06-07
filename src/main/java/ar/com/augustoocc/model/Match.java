@@ -11,17 +11,20 @@ import lombok.NoArgsConstructor;
         schema="universityW3")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course {
+public class Match {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_curso", nullable = false)
-    private long idCurso;
+    @Column(name = "id_Match", nullable = false)
+    private long idMatch;
 
-    @Column(name = "nombre")
+    @Column(name = "id_usr", nullable = false)
+    private long idUsr;
+
+    @Column(name = "like")
     private String nombre;
 
-    @Column(name= "precio")
+    @Column(name= "unlike")
     private float precio;
 
 }

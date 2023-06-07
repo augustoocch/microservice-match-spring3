@@ -1,10 +1,8 @@
 package ar.com.augustoocc.controller;
 
-import ar.com.augustoocc.model.Order;
 import ar.com.augustoocc.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +33,7 @@ public class OrderController {
     }
 
     @PatchMapping(value = "/update-orders")
-    public ResponseEntity<Orders> updateOrder(@RequestBody Orders orders) {
+    public ResponseEntity<Order> updateOrder(@RequestBody Orders orders) {
         if (ordersService.findOrder(orders.getId()) != null) {
             Orders newOrder = ordersService.findOrder(orders.getId());
             ordersService.updateOrder(orders);
