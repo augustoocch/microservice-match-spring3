@@ -22,11 +22,6 @@ public class Order {
     @ManyToOne(targetEntity = Course.class)
     @JoinColumn(name = "curso_id", referencedColumnName = "id_curso")
     private Course courseId;
-    //@Column(name = "curso_id")
-
-    @ManyToOne(targetEntity = Users.class)
-    @JoinColumn(name = "user_id", referencedColumnName = "id_user")
-    private Users idUser;
 
     private String state;
 }

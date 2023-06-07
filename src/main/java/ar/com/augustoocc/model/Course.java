@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//import javax.persistence.*;
 
 @Data
 @Entity
@@ -24,6 +23,5 @@ public class Course {
 
     @Column(name= "precio")
     private float precio;
-
 
 }

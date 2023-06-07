@@ -2,15 +2,14 @@ package ar.com.augustoocc.controller;
 
 
 import ar.com.augustoocc.model.Course;
+import ar.com.augustoocc.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
 
 @RestController
-public class CourseController {
+public class MatchController {
 
     @Autowired
     CourseService courseService;
