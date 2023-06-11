@@ -1,6 +1,6 @@
-package ar.com.augustoocc.repository;
+package com.intralink.matchs.repository;
 
-import ar.com.augustoocc.model.Match;
+import com.intralink.matchs.model.Match;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 

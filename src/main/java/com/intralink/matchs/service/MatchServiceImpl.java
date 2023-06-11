@@ -1,10 +1,13 @@
-package ar.com.augustoocc.service;
+package com.intralink.matchs.service;
 
-import ar.com.augustoocc.model.Match;
-import ar.com.augustoocc.repository.MatchRepository;
+import com.intralink.matchs.model.Match;
+import com.intralink.matchs.repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+@Component
 public class MatchServiceImpl implements MatchService{
 
     @Autowired

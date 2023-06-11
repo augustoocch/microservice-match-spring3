@@ -1,8 +1,10 @@
-package ar.com.augustoocc.service;
+package com.intralink.matchs.service;
 
-import ar.com.augustoocc.model.Match;
+import com.intralink.matchs.model.Match;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+@Service
 public interface MatchService {
 
     public Mono<Match> newLike(long id, long idMatch);

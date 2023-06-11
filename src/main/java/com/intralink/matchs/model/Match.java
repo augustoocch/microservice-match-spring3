@@ -1,27 +1,22 @@
-package ar.com.augustoocc.model;
+package com.intralink.matchs.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 import java.util.Set;
 
 @Data
-@Entity
-@Table(name = "match",
-        schema="intraLink")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Match {
 
-    @Column(name = "id_usr", nullable = false)
+    @Id
     private long idUsr;
 
-    @Column(name = "like")
     private Set<Long> like;
 
-    @Column(name= "dislike")
     private Set<Long> dislike;
 
 }

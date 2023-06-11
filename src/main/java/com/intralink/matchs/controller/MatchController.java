@@ -1,7 +1,7 @@
-package ar.com.augustoocc.controller;
+package com.intralink.matchs.controller;
 
-import ar.com.augustoocc.model.Match;
-import ar.com.augustoocc.service.MatchService;
+import com.intralink.matchs.model.Match;
+import com.intralink.matchs.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
