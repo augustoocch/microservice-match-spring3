@@ -1,10 +1,11 @@
 package ar.com.augustoocc.service;
 
 import ar.com.augustoocc.model.Match;
+import reactor.core.publisher.Mono;
 
 public interface MatchService {
 
-    public Mono newLike(int id);
+    public Mono<Match> newLike(long id, long idMatch);
     public void newDislike(int id);
     public Match findMatch(int id);
 

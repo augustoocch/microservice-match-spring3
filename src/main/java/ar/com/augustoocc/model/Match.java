@@ -5,26 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Entity
-@Table(name = "course",
-        schema="universityW3")
+@Table(name = "match",
+        schema="intraLink")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Match {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_Match", nullable = false)
-    private long idMatch;
 
     @Column(name = "id_usr", nullable = false)
     private long idUsr;
 
     @Column(name = "like")
-    private String nombre;
+    private Set<Long> like;
 
-    @Column(name= "unlike")
-    private float precio;
+    @Column(name= "dislike")
+    private Set<Long> dislike;
 
 }

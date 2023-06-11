@@ -13,24 +13,24 @@ public class MatchController {
     @Autowired
     MatchService matchService;
 
-    @GetMapping(value = "/new-match/{match}")
-    public Mono<Match> findCourse(@PathVariable(name = "match", required = true) int matchId) {
-        return matchService.newLike(matchId);
+    @PostMapping(value = "/new-match")
+    public Mono<Match> findCourse(@RequestBody long id, long matchId) {
+        return matchService.newLike(id, matchId);
     }
 
     @PutMapping(value = "/new-match")
     public ResponseEntity<Match> newCourse(@RequestBody Match match) {
-
+    return null;
     }
 
     @PatchMapping(value = "/update-match")
     public ResponseEntity<Match> updateUser(@RequestBody Match match) {
-
+        return null;
 
     }
 
     @DeleteMapping(value = "/delete-match")
     public ResponseEntity<Match> deleteUser(@RequestBody Match match) {
-
+        return null;
     }
 }
