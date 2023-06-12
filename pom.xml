@@ -35,12 +35,14 @@
 			<version>1.0.2</version>
 		</dependency>
 
-		<!-- SPI para R2DBC -->
+<!--
+		 SPI para R2DBC
 		<dependency>
 			<groupId>io.r2dbc</groupId>
 			<artifactId>r2dbc-spi</artifactId>
 			<version>0.9.0.RELEASE</version>
 		</dependency>
+-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
