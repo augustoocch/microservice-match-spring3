@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>ar.com.augustoocc</groupId>
-	<artifactId>courses-registry-microservice</artifactId>
+	<artifactId>intralink-match-microservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>courses-registry-microservice</name>
 	<description>Project for Spring Boot</description>
