@@ -12,10 +12,9 @@ import java.util.Set;
 @AllArgsConstructor
 public class Match {
 
-    @Id
     private long idUsr;
 
-    private Set<Long> like;
+    private String like;
 
     private Set<Long> dislike;
 
