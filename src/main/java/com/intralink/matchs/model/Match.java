@@ -12,6 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class Match {
 
+    @Id
     private long idUsr;
 
     private String like;
