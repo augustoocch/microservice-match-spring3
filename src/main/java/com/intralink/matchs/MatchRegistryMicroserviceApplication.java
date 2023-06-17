@@ -2,16 +2,18 @@ package com.intralink.matchs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.data.r2dbc.R2dbcDataAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 import org.springframework.web.reactive.config.EnableWebFlux;
 
+
+import org.springframework.boot.autoconfigure.data.r2dbc.R2dbcDataAutoConfiguration;
+
 @EnableWebFlux
 @EnableR2dbcRepositories
-@SpringBootApplication(exclude = R2dbcDataAutoConfiguration.class)
+@SpringBootApplication(exclude ={R2dbcDataAutoConfiguration.class, })
 @ComponentScan(basePackages={"com.intralink.matchs.configuration","com.intralink.matchs.service","com.intralink.matchs.controller", "com.intralink.matchs.model",
-		"com.intralink.matchs.repository" })
+		"com.intralink.matchs.repository", "com.intralink.matchs.security" })
 public class MatchRegistryMicroserviceApplication {
 
 	public static void main(String[] args) {

@@ -17,6 +17,6 @@ public class Match {
 
     private String like;
 
-    private Set<Long> dislike;
+    private String dislike;
 
 }

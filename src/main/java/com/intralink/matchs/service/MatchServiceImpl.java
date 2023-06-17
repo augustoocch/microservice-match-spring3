@@ -1,6 +1,7 @@
 package com.intralink.matchs.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -37,8 +38,21 @@ public class MatchServiceImpl implements MatchService{
     }
 
     @Override
-    public void newDislike(int id) {
-
+    public Mono<Match> newDislike(long idUser, long idDislike) {
+        Mono<Match> dislike = matchRepository.findById(idUser)
+                .flatMap(match -> {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    try {
+                        JsonNode jsonNode = objectMapper.readTree(match.getDislike());
+                        ArrayNode arrayNode = (ArrayNode) jsonNode;
+                        arrayNode.add(idDislike);
+                        match.setDislike(objectMapper.writeValueAsString(arrayNode));
+                    } catch (JsonProcessingException e) {
+                        throw new RuntimeException(e);
+                    }
+                    return matchRepository.save(match);
+                });
+        return dislike;
     }
 
     @Override

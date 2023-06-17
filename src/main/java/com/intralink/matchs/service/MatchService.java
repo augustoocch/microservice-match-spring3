@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 public interface MatchService {
 
     public Mono<Match> newLike(long id, long idMatch);
-    public void newDislike(int id);
+    public Mono<Match> newDislike(long id, long idMatch);
     public Match findMatch(int id);
 
 
