@@ -9,6 +9,7 @@ import com.intralink.matchs.model.Match;
 import com.intralink.matchs.repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
@@ -56,7 +57,9 @@ public class MatchServiceImpl implements MatchService{
     }
 
     @Override
-    public Match findMatch(int id) {
-        return null;
+    public Flux<Match> findAllUsers() {
+
+        Flux<Match> find = matchRepository.findAll();
+        return find;
     }
 }

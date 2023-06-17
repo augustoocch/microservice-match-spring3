@@ -6,6 +6,7 @@ import com.intralink.matchs.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -29,6 +30,11 @@ public class MatchController {
     public ResponseEntity<Match> updateUser(@RequestBody Match match) {
         return null;
 
+    }
+
+    @GetMapping("/get-all-users")
+    public Flux<Match> getAllUsers() {
+        return matchService.findAllUsers();
     }
 
     @DeleteMapping(value = "/delete-match")
