@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.intralink.matchs.model.Match;
 import com.intralink.matchs.repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +28,9 @@ public class MatchServiceImpl implements MatchService{
                     ObjectMapper objectMapper = new ObjectMapper();
                     try {
                         JsonNode jsonNode = objectMapper.readTree(match.getLike());
-                        ArrayNode arrayNode = (ArrayNode) jsonNode;
-                        arrayNode.add(idLike);
-                        match.setLike(objectMapper.writeValueAsString(arrayNode));
+                        ObjectNode objectNode = (ObjectNode) jsonNode;
+                        objectNode.put("idUsr", String.valueOf(idLike));
+                        match.setLike(objectMapper.writeValueAsString(objectNode));
                     } catch (JsonProcessingException e) {
                         throw new RuntimeException(e);
                     }

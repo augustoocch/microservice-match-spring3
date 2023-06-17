@@ -16,7 +16,7 @@ public class MatchController {
     @Autowired
     MatchService matchService;
 
-    @PostMapping(value = "/new-match")
+    @PutMapping(value = "/new-match")
     public Mono<Match> findCourse(@RequestBody RequestDto request) {
         return matchService.newLike(request.getId(), request.getMatchId());
     }
