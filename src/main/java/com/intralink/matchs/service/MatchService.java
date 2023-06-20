@@ -8,8 +8,8 @@ import reactor.core.publisher.Mono;
 @Service
 public interface MatchService {
 
-    public Mono<Match> newLike(long id, long idMatch);
-    public Mono<Match> newDislike(long id, long idMatch);
+    public Mono<String> newLike(long id, long idMatch);
+    public Mono<String> newDislike(long id, long idMatch);
     public Flux<Match> findAllUsers();
 
 }

@@ -17,17 +17,22 @@ public class MatchController {
     MatchService matchService;
 
     @PutMapping(value = "/new-match")
-    public Mono<Match> findCourse(@RequestBody RequestDto request) {
+    public Mono<String> newLike(@RequestBody RequestDto request) {
         return matchService.newLike(request.getId(), request.getMatchId());
     }
 
+    @PutMapping("/new-dislike")
+    public Mono<String> newDislike (@RequestBody RequestDto request) {
+        return  matchService.newDislike(request.getId(), request.getMatchId());
+    }
+
     @PutMapping(value = "/new-matches")
-    public ResponseEntity<Match> newCourse(@RequestBody Match match) {
+    public ResponseEntity<Match> newDislike(@RequestBody Match match) {
     return null;
     }
 
     @PatchMapping(value = "/update-match")
-    public ResponseEntity<Match> updateUser(@RequestBody Match match) {
+    public ResponseEntity<Match> updateMatch(@RequestBody Match match) {
         return null;
 
     }
@@ -38,7 +43,7 @@ public class MatchController {
     }
 
     @DeleteMapping(value = "/delete-match")
-    public ResponseEntity<Match> deleteUser(@RequestBody Match match) {
+    public ResponseEntity<Match> deleteMatch(@RequestBody Match match) {
         return null;
     }
 }

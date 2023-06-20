@@ -20,8 +20,8 @@ public class Match {
     @Column("id_usr")
     private long idUsr;
 
-    private String like;
+    private String likes;
 
-    private String dislike;
+    private String dislikes;
 
 }
