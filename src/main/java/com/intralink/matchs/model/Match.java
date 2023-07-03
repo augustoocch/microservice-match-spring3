@@ -13,12 +13,15 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(schema = "intraLink",
-        name = "match")
+        name = "matching")
 public class Match {
 
     @Id
     @Column("id_usr")
     private long idUsr;
+
+    @Column("id_mail")
+    private String idMail;
 
     private String likes;
 

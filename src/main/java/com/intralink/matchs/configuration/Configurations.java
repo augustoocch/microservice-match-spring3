@@ -6,7 +6,9 @@ import io.r2dbc.spi.ConnectionFactoryOptions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
+import reactor.bus.EventBus;
 
 @Configuration
 public class Configurations {
@@ -42,6 +44,11 @@ public class Configurations {
                 .build();
 
         return ConnectionFactories.get(connectionFactoryOptions);
+    }
+
+    @Bean
+    public EventBus createBus(Environment env) {
+        return EventBus.create();
     }
 
 }
