@@ -17,7 +17,7 @@ public class MatchController {
     MatchService matchService;
 
     @PutMapping(value = "/new-like")
-    public Mono<String> newLike(@RequestBody RequestDto request) {
+    public Mono<ResponseEntity<Boolean>> newLike(@RequestBody RequestDto request) {
         return matchService.newLike(request.getId(), request.getMatchId());
     }
 
