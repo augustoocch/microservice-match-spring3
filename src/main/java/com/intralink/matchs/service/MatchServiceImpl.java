@@ -101,7 +101,7 @@ public class MatchServiceImpl implements MatchService{
                         throw new RuntimeException(ex);
                     }
                 }).map(i -> i.booleanValue())
-                .switchIfEmpty(Mono.error(() -> new RuntimeException("Map Empty in method getMatchinValidation()")));
+                .switchIfEmpty(Mono.just(false));
 
         return getMatch;
     }
